@@ -80,11 +80,11 @@ with st.sidebar:
 
     st.subheader("Aktivitas")
     activity_map = {
-        "1.2": ("Sedenter · ×1,2", "Hampir tidak berolahraga, misalnya kerja di meja tanpa aktivitas fisik tambahan."),
-        "1.375": ("Ringan · ×1,375", "Olahraga ringan 1–2 hari per minggu."),
-        "1.55": ("Sedang · ×1,55", "Olahraga sedang 3–5 hari per minggu."),
-        "1.725": ("Aktif · ×1,725", "Olahraga berat 6–7 hari per minggu."),
-        "1.9": ("Sangat aktif · ×1,9", "Olahraga berat setiap hari dengan pekerjaan fisik, atau latihan dua kali sehari."),
+        "1.2": ("Sedenter · x1,2", "Hampir tidak berolahraga, misalnya kerja di meja tanpa aktivitas fisik tambahan."),
+        "1.375": ("Ringan · x1,375", "Olahraga ringan 1–2 hari per minggu."),
+        "1.55": ("Sedang · x1,55", "Olahraga sedang 3–5 hari per minggu."),
+        "1.725": ("Aktif · x1,725", "Olahraga berat 6–7 hari per minggu."),
+        "1.9": ("Sangat aktif · x1,9", "Olahraga berat setiap hari dengan pekerjaan fisik, atau latihan dua kali sehari."),
     }
 
     act_key = st.selectbox(
@@ -192,7 +192,7 @@ elif result:
         st.metric("BMI", f"{result['bmi']:.1f}", result["bmi_category"], delta_color="off")
         st.metric("BMR", f"{result['bmr']:,.0f} kcal", "Kebutuhan saat istirahat", delta_color="off")
     with m_col2:
-        st.metric("TDEE", f"{result['tdee']:,.0f} kcal", f"BMR × {result['activity_multiplier']}", delta_color="off")
+        st.metric("TDEE", f"{result['tdee']:,.0f} kcal", f"BMR x {result['activity_multiplier']}", delta_color="off")
         st.metric(f"{sd_type.capitalize()} per hari", f"{sd:+,.0f} kcal", f"{result['surplus_deficit_pct']:.0f}% dari TDEE", delta_color="off")
     with m_col3:
         st.metric("Perkiraan berat akhir", f"{result['final_weight']:.1f} {u}", f"Dari {result['weight']:.1f} {u}", delta_color="off")
